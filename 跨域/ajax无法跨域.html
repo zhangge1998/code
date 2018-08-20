@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let xml = null;
+    if(XMLHttpRequest){
+        xml = new XMLHttpRequest();
+    }else{
+        xml = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xml.onreadystatechange = function(){
+        if(xml.readyState == 4 && xml.status == 200){
+            alert(xml.responseText);
+        }
+    };
+    xml.open('get','https://api.douban.com/v2/book/search?q=javascript&count=1',true);
+    xml.send(null);
+</script>
+</body>
+</html>

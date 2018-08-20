@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="list">
+
+</ul>
+<script>
+    (function(){
+        var oUL = document.getElementById('list');
+        if(!oUL){
+            return;
+        }
+        var str = '';
+        for(var i = 0; i < 300; i++){
+            // var oLI = document.createElement('li');
+            // oLI.innerText = i + 1;
+            str += '<li>' + (i + 1) + '</li>';
+            // oLI.addEventListener('click', function(){
+            //     alert(this.innerText);
+            // });
+            // oLI.onclick = function(){
+            //     alert(this.innerText);
+            // };
+            // oLI.addEventListener('click', function(){
+            //     alert(i + 1);
+            // });
+            // oUL.appendChild(oLI);
+        }
+        oUL.innerHTML = str;
+        oUL.addEventListener('click', function(){
+            var target = event.target;
+            if(target.tagName.toLowerCase() == 'li'){
+                alert(target.innerText);
+            }
+        })
+    })();
+
+</script>
+</body>
+</html>

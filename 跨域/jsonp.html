@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function cb(data){
+        console.log(data);
+    }
+</script>
+<script>
+    var script = document.createElement('script');
+    script.src = 'https://api.douban.com/v2/book/search?q=javascript&count=1&callback=cb';
+    document.body.insertBefore(script,document.body.firstChild);
+</script>
+</body>
+</html>
