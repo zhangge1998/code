@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function createFunctions(){
+        var arr = [];
+        for(var i = 0; i < 10; i++){
+            arr[i] = (function(j){
+                return function () {
+                    return j;
+                }
+            })(i)
+        }
+        return arr;
+    }
+    console.log(createFunctions());
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{width:400px;height:300px;margin:30px auto;border: 1px solid grey;
+        animation: move 16s ease-in-out infinite running;}
+        @keyframes move {
+            0%{
+                background: url("./image/1.jpg") no-repeat;
+                background-size: 400px 300px;
+            }
+            25%{
+                background: url("./image/2.jpg") no-repeat;
+                background-size: 400px 300px;
+            }
+            50%{
+                background: url("./image/3.jpg") no-repeat;
+                background-size: 400px 300px;
+            }
+            100%{
+                background: url("./image/4.jpg") no-repeat;
+                background-size: 400px 300px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>
