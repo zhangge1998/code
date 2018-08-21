@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box, #box1{width:300px;height:200px;background: antiquewhite;transition: transform 5s;}
+        #box:hover{transform: translateX(500px);}
+        #box1{animation: move 5s linear forwards;}
+        @keyframes move {
+            from {margin-left: 0}
+            to {margin-left: 500px}
+        }
+    </style>
+</head>
+<body>
+<div id="box">向右移动的盒子</div>
+<hr>
+<div id="box1">向右移动的盒子</div>
+</body>
+</html>

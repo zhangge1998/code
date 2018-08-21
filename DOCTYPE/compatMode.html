@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+正确的DOCTYPE使浏览器按照标准模式来解析渲染文档
+选择正确的DOCTYPE以及使DOCTYPE位于文档绝对开头的位置是保证DPCTYPE正确的关键
+标准模式使得不同浏览器之间兼容问题的风险降到最低
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+上面的 DOCTYPE 包含 6 部分：
+字符串“<!DOCTYPE”
+根元素通用标识符“HTML”
+字符串“PUBLIC”
+被引号括起来的公共标识符（publicId）“-//W3C//DTD HTML 4.01//EN”
+被引号括起来的系统标识符（systemId）“http://www.w3.org/TR/html4/strict.dtd”
+字符串“>”
+HTML5 的 DOCTYPE 是最佳选择：<!DOCTYPE html>，所有的主流浏览器均将这种只包含
+第 1、2、6 部分的最短的 DOCTYPE 视为标准模式
+HTML4.01 Strict 的 DOCTYPE 也是一种好的选择：<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">，
+它在各主流浏览器中触发的模式与上面的 HTML5 的完全一致。
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    document.write(document.compatMode);
+</script>
+</body>
+</html>

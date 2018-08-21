@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #wrap{position:relative;}
+        #box{width:300px;height:200px;position:absolute;background: antiquewhite;}
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="box">向右移动的盒子</div>
+</div>
+<script>
+    var oBox = document.getElementById('box');
+    var left = 0;
+    var move = setInterval(function(){
+        left += 1;
+        oBox.style.left = left + 'px';
+        if(left > 500){
+            clearInterval(move);
+        }
+    },1);
+</script>
+</body>
+</html>
