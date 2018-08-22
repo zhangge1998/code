@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function CreatePerson(name, age){
+        this.name = name;
+        this.age = age;
+        this.say = function(){
+            console.log(this.name);
+        }
+    }
+    var person = new CreatePerson('nini', 20);
+    var person1 = {
+        name:'nike',
+        age:21
+    };
+    var person2 = {
+        name:'zzgg',
+        age:22
+    };
+    person.say();
+    person.say.bind(person1).call(person2);
+    var aa = CreatePerson.bind({}, 'hhhh');
+    var person3 = new aa(30);
+    person3.say();
+</script>
+</body>
+</html>

@@ -1,19 +1,19 @@
-// var express = require('express');
-// var app = express();
-// app.get('/user',function(req,res){
-//     if(req.headers.origin){
-//         res.writeHead(200, {
-//             "Content-Type": "text/html; charset=UTF-8",
-//             "Access-Control-Allow-Origin":"http://localhost:63342",
-//             "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-//             "Access-Control-Allow-Credentials": "true",
-//             "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, X-Custom-Header"
-//         });
-//         res.write('cors');
-//         res.end();
-//     }
-//    // res.send('userpage');
-// });
+var express = require('express');
+var app = express();
+app.get('/user',function(req,res){
+    if(req.headers.origin){
+        res.writeHead(200, {
+            "Content-Type": "text/html; charset=UTF-8",
+            "Access-Control-Allow-Origin":"http://localhost:63342",
+            "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+            "Access-Control-Allow-Credentials": "true",
+            "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, X-Custom-Header"
+        });
+        res.write('cors');
+        res.end();
+    }
+   // res.send('userpage');
+});
 // app.options('/user',function(req,res){
 //    if(req.headers.origin){
 //        res.writeHead(200, {

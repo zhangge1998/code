@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // var obj = {
+    //     func: function() {
+    //         alert('me');
+    //     },
+    //     say: function () {
+    //         var that = this;   //此时的this就是obj对象
+    //         setTimeout(function () {
+    //             console.log(this);
+    //             that.func()
+    //         }, 2000);
+    //     }
+    // };
+    // obj.say();
+    var obj = {
+        'a':20,
+        say: function () {
+            console.log(this);
+            var f1 = () => {
+                console.log(this); // obj
+                setTimeout(() => {
+                    console.log(this); // obj
+                })
+            };
+            f1();
+        }
+    };
+    obj.say();
+    function add(a, b){
+        console.log(arguments);
+    }
+    add(1, 2);
+    var add1 = (...args) =>{
+        console.log(args);
+    };
+    add1(1, 2);
+</script>
+</body>
+</html>
