@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    Function.prototype.bind = function(){
+        var fn = this;
+        var arg = Array.from(arguments);
+        var context = arg[0];
+        var arr = arg.slice(1);
+        console.log(arr);
+        return function(){
+            return fn.apply(context, arr);
+        }
+    };
+    var person1 = {
+        name: 'nike',
+        age: 20,
+        say:function(job){
+            console.log(this.name + " " + job);
+        }
+    };
+    var person2 = {
+        name: 'nini',
+        age: 30
+    };
+    person1.say('worker');
+    person1.say.bind(person2, 'teacher')();
+</script>
+</body>
+</html>

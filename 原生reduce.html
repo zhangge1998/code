@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    Array.prototype.fakeReduce = function(fn, initialValue){
+        var arr = this;
+        var nArr = arr.concat();
+
+        if(initialValue){
+            nArr.unshift(initialValue);
+        }
+        var index, newValue;
+        while(nArr.length > 1){
+            index = arr.length - nArr.length + 1;
+            newValue = fn.call(null, nArr[0], nArr[1], index, arr);
+            nArr.splice(0, 2, newValue);
+        }
+        return newValue;
+    };
+    let arr = [1, 2, 3, 4, 5];
+    let sum = arr.fakeReduce(function(prev, cur, index, arr){
+        console.log(prev, cur, index, arr);
+        return prev * cur;
+    }, 100);
+    console.log(sum);
+</script>
+</body>
+</html>

@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <style>
+        #box{width:100px;height:100px;background: lightcoral;}
+        #wrap{width:200px;height:200px;border:1px solid #ccc;}
+    </style>
 </head>
 <body>
-$END$
+<div id="wrap" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+<div id="box" draggable="true" ondragstart="drag(event)"></div>
+<script>
+    function drag(e){
+        e.dataTransfer.setData('Text', e.target.id);
+    }
+    function allowDrop(e){
+        e.preventDefault();
+    }
+    function drop(e){
+        e.preventDefault();
+        var data = e.dataTransfer.getData('Text');
+        e.target.appendChild(document.getElementById(data));
+    }
+</script>
 </body>
 </html>

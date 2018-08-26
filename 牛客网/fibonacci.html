@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Fibonacci(n)
+    {
+        // write code here
+        var arr = [0, 1];
+        var k = 2;
+        while(k <= n){
+            arr[arr.length] = arr[arr.length - 1] + arr[arr.length - 2];
+            k++;
+        }
+        console.log(arr[n]);
+    }
+    Fibonacci(0);
+</script>
+</body>
+</html>

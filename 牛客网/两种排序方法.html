@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    var n = 3;
+    var arr = ['a','aa','bbb'];
+    function test1(arr){
+        var lArr = [];
+        for(var i = 0; i < arr.length; i++){
+            lArr.push(arr[i].length);
+        }
+        var nlArr = lArr.reverse();
+        return lArr === nlArr;
+    }
+    function test2(arr){
+        var str = JSON.stringify(arr);
+        var nArr = JSON.parse(str);
+        return nArr.sort().toString() === arr.toString();
+    }
+    if(test1(arr) && test2(arr)){
+        console.log('both');
+    }else if(test2(arr)){
+        console.log('lexicographically');
+    }else if(test1(arr)){
+        console.log('lengths');
+    }else{
+        console.log('none');
+    }
+</script>
 </body>
 </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    Function.prototype.myApply =function(context,arr){
+        context = Object(context) || window;
+        context.fn = this;
+        var result;
+        if(!arr){
+            result= context.fn();
+        }else{
+            var args = [];
+            for(var i=0;i<arr.length;i++){
+                args.push('arr['+i+']');
+            }
+            result = eval('context.fn('+args.toString()+')')
+        }
+        delete context.fn;
+        return result;
+    };
+
+    var q = {name:'chuchu'};
+    var arg1 = 1;
+    var arg2= [123];
+    function eat(n,m){
+        console.log(this,n,m);
+    }
+    eat.myApply(q,[arg1,arg2])
+    // function lian(a, b){
+    //     return (a + ' ' + b);
+    // }
+    // function add(arr){
+    //     var s = [];
+    //     for(var i = 0; i < arr.length; i++){
+    //         s .push('arr['+i+']');
+    //     }
+    //     var a = eval('lian('+s.toString()+')');
+    //     console.log(a);
+    // }
+    // add([1,[123]]);
+</script>
+</body>
+</html>

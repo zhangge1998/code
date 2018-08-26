@@ -38,8 +38,8 @@
         alert(xml.responseText);
     };
     xml.open('post', 'http://localhost:8080/user', true);
-    xml.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xml.send('name:hh');
+    xml.setRequestHeader('Content-Type', 'text/html');
+    xml.send('name=hh');
 </script>
 </body>
 </html>

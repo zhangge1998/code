@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // function Person(name, age, job){
+    //     this.name = name;
+    //     this.age = age;
+    //     this.job = job;
+    //     this.say = function(){
+    //         console.log(this.name + this.age + this.job);
+    //     }
+    // }
+    // function Men(){
+    //     Person.call(this, 'nike', 21, 'worker');
+    // }
+    // var man = new Men();
+    // man.say();
+
+    // var person1 = {
+    //     name: 'nike',
+    //     age: 20,
+    //     say:function(job){
+    //         console.log(this.name + " " + job);
+    //     }
+    // };
+    // var person2 = {
+    //     name: 'nini',
+    //     age: 30
+    // };
+    // person1.say('worker');
+    // person1.say.call(person2, 'teacher');
+    // person1.say.apply(person2, ['teacher']);
+    // person1.say.bind(person2, ['teacher'])();
+    Function.prototype.call = function(){
+        var arg = Array.from(arguments);
+        var context = arg[0];
+        var arr = arg.slice(1);
+        console.log(arr);
+        return this.apply(context, arr);
+    };
+    var person1 = {
+        name: 'nike',
+        age: 20,
+        say:function(job){
+            console.log(this.name + " " + job);
+        }
+    };
+    var person2 = {
+        name: 'nini',
+        age: 30
+    };
+    person1.say('worker');
+    person1.say.call(person2, 'teacher');
+</script>
+</body>
+</html>
