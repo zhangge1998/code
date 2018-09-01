@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{width:100%;height:6000px;border:1px solid #000;box-sizing: border-box;}
+        #header{width:100%;height:50px;text-align: center;background: #cccccc;}
+        #top{width:30px;height:30px;background: #cccccc;position:fixed;bottom:50px;right:50px;}
+    </style>
+</head>
+<body>
+<div id="header">header</div>
+<p>第一段</p>
+<p>第一段</p>
+<p>第一段</p>
+<p>第一段</p>
+<p>第一段</p>
+<p>第一段</p>
+<div id="top">top</div>
+<script>
+    var toTop = document.getElementById('top');
+    toTop.onclick = function(){
+        var timer = setInterval(function(){
+            // if(document.documentElement.scrollTop !== 0){
+            //     document.documentElement.scrollTop = 0;
+            //     clearInterval(timer);
+            // }
+            var top = document.documentElement.scrollTop || document.body.scrollTop;
+            var moveHeight = Math.floor(-top / 5);
+            if(top === 0){
+                clearInterval(timer);
+            }
+            document.documentElement.scrollTop = document.body.scrollTop = top + moveHeight;
+        }, 60);
+
+    }
+</script>
+</body>
+</html>
