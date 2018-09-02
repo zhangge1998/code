@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<p></p>
+<script>
+    var num = 10;
+    var oP = document.getElementsByTagName('p')[0];
+    oP.innerText = num.toString();
+    var timer = setInterval(function(){
+        if(num <= 0){
+            clearInterval(timer);
+        }else{
+            num--;
+            oP.innerText = num.toString();
+        }
+    }, 1000)
+</script>
 </body>
 </html>

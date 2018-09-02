@@ -2,9 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <style>
+        #wrap,#wrap1{width:300px;height:200px;background: #ccc141;}
+        #box,#box1{width:100px;height:100px;background: #5c59cc;}
+    </style>
 </head>
 <body>
-$END$
+<div id="wrap">
+    <div id="box"></div>
+</div>
+<hr>
+<div id="wrap1">
+    <div id="box1"></div>
+</div>
+<script>
+    var oWrap = document.getElementById('wrap');
+    var oBox = document.getElementById('box');
+    var oWrap1 = document.getElementById('wrap1');
+    var oBox1 = document.getElementById('box1');
+    oWrap.onmouseenter = function(){
+        console.log('移入');
+    };
+    oWrap.onmouseleave = function(){
+        console.log('移出');
+    };
+    oWrap1.onmouseover = function(){
+        console.log('移入');
+    };
+    oWrap1.onmouseout = function(){
+        console.log('移出');
+    }
+
+</script>
 </body>
 </html>
