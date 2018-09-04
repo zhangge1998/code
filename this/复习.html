@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+Function.prototype.myApply = function(context, arr){
+    context = Object(context) || context;
+    context.fn = this;
+    var result;
+    if(!arr){
+        result = context.fn();
+    }else{
+        var args = [];
+        for(var i = 0; i < arr.length; i++){
+            args.push('arr['+i+']');
+        }
+        result = eval('context.fn('+args.toString()+')')
+    }
+    delete context.fn;
+    return result;
+};
+Function.prototype.myCall = function(){
+    var arr = Array.from(arguments);
+    var context = arr[0];
+    var args = arr.slice(1);
+    return this.apply(context, args);
+};
+Function.prototype.myBind = function(){
+    var fn = this;
+    var arr = Array.from(arguments);
+    var context = arr[0];
+    var args = arr.slice(1);
+    return function(){
+        return fn.apply(context, args);
+    }
+};
+var q = {name:'chuchu'};
+var arg1 = 1;
+var arg2= [123];
+function eat(n,m){
+    console.log(this,n,m);
+}
+eat.myApply(q, [arg1, arg2]);
+eat.myBind(q,arg1,arg2)();
+eat.myCall(q, arg1, arg2);
+</script>
+</body>
+</html>
