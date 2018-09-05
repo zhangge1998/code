@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="1.css">
+</head>
+<body>
+<script>
+    window.onload=function(){
+        var ocontent=document.getElementById("content");
+        var oli=ocontent.getElementsByTagName("li");
+        var odiv=ocontent.getElementsByTagName("div");
+
+        for(var i=0;i<oli.length;i++){
+            oli[i].index=i; //对当前li进行编号
+            oli[i].onclick=function(){
+                for(var n=0;n<oli.length;n++){
+                    oli[n].className="";
+                    odiv[n].className="hide";
+                }
+                this.className="on";
+                odiv[this.index].className="";
+            }
+        }
+    }
+</script>
+<div class="main">
+    <div id="content">
+        <ul>
+            <li class="on">case1</li>
+            <li>case2</li>
+            <li>case3</li>
+            <li>case4</li>
+        </ul>
+        <div class="">
+            <span id="hello">hello world</span>
+        </div>
+        <div class="hide">
+            <span id="hello1">hello world1</span>
+        </div>
+        <div class="hide">
+            <span id="hello2">hello world2</span>
+        </div>
+        <div class="hide">
+            <span id="hello3">hello world3</span>
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+</html>
