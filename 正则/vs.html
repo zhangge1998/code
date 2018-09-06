@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function vs(){
+        var re = null, i;
+        for(i = 0; i < 10; i++){
+            re = /cat/g;
+            console.log(re.test('catlriuhfdj'));
+            console.log(re.test('catlriuhfdj'));
+        }
+        for(i = 0; i < 10; i++){
+            re = new RegExp("cat","g");
+            console.log(re.test('catlriuhfdj'));
+        }
+    }
+    vs();
+</script>
+</body>
+</html>

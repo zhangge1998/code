@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="str" type="text" onchange="test()">
+<script>
+    function test(){
+        var str = document.getElementById('str').value;
+        var pattern = new RegExp("cat", "g");
+        if(pattern.test(str)){
+            alert("exist");
+        }else{
+            alert("no");
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    日期一:<input type="date" id="date1">
+</div>
+<div>
+    日期二:<input type="date" id="date2">
+</div>
+<p>相差天数：<input type="text" id="days"></p>
+<button>计算</button>
+<script>
+    var oBtn = document.getElementsByTagName('button')[0];
+    var oDay = document.getElementById('days');
+    oBtn.onclick = function(){
+        var date1 = document.getElementById('date1').value;
+        var date2 = document.getElementById('date2').value;
+        var d1 = new Date(date1);
+        var d2 = new Date(date2);
+        // var d1 = new Date(format(date1).toString());
+        // var d2 = new Date(format(date2).toString());
+        var days = Math.abs((d1.getTime() - d2.getTime())) / (24 * 3600 * 1000);
+        oDay.value= days;
+    };
+    // function format(date){
+    //     return date.replace(/-/g, ',');
+    // }
+</script>
+</body>
+</html>
