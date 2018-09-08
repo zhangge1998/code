@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="str" type="text" onchange="test()" placeholder="请输入用户名">
+<script>
+    function test(){
+        var str = document.getElementById('str').value;
+        var pattern = /^[\w-]{3,16}$/;
+        if(pattern.test(str)){
+            alert("correct");
+        }else{
+            alert("wrong");
+        }
+    }
+
+</script>
+</body>
+</html>

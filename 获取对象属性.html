@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // var obj = {
+    //     name:'nike',
+    //     age: 20,
+    //     job:'teacher',
+    //     sayName: function(){
+    //         alert(this.name);
+    //     }
+    // };
+    // console.log(Object.keys(obj));
+    // console.log(Object.values(obj));
+    // console.log(Object.getOwnPropertyNames(obj));
+    // console.log(Object.entries(obj));
+    function fibonacci(n) {
+        var arr = [1, 1];
+        var i = 2;
+        while(i <= n){
+            arr[i] = arr[i - 1] + arr[i - 2];
+            i++;
+        }
+        return arr[n - 1];
+    }
+    console.log(fibonacci(5));
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Test(name){
+        this.name = name;
+    }
+    Test.prototype.name = 'nike';
+    var test1 = new Test('nini');
+    console.log(test1.name);
+    console.log(Test.prototype.isPrototypeOf(test1));
+    console.log(Object.getPrototypeOf(test1) === Test.prototype);
+    console.log(Object.getPrototypeOf(test1).name);
+    /*在所有实现中都无法访问到[[prototype]]，但是可以通过isprototypeOf()方法来确定
+    对象之间是否存在这种关系
+    Test.prototype.isprototypeOf(test1) 若test1.[[prototype]] 指向Test.prototype,
+    那么这个方法返回true
+    当实例中添加的属性和原型属性同名时，会发生属性覆盖，即不会去访问原型上的属性，但是只会阻止访问原型上的属性，
+    而不会修改那个属性，这时如果要获取原型上属性，则要使用Object.getPrototypeOf()来获取对象的原型，然后获取原型上的属性
+    或者使用delete操作符删除实例上的属性，从而可以重新访问到原型上的属性。
+    */
+</script>
+</body>
+</html>
