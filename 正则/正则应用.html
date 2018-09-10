@@ -5,16 +5,36 @@
     <title>Title</title>
 </head>
 <body>
-<input id="str" type="text" onchange="test()" placeholder="请输入用户名">
+<input id="str" type="text" onchange="test()">
 <script>
     function test(){
         var str = document.getElementById('str').value;
-        var pattern = /^[\w-]{3,16}$/;
-        if(pattern.test(str)){
-            alert("correct");
-        }else{
-            alert("wrong");
-        }
+        // var pattern = /^[a-zA-Z0-9_-]{3,16}$/;
+        // /([a-z]|[A-Z]|[0-9]|\_|\-)/
+        // var pattern = /^0\d{2,3}-\d{7,8}$/;
+        // var pattern = /\b(\w+)\b\s+\1\b/;
+        // var pattern = /(?<=<(\w+)>).*(?=<\/\1>)/;
+        var paramMatch = /\?(\w+=[\w-]+&?)*/;
+        // var result = str.match(pattern);
+        var ipTest = /^((2[0-4]\d|25[0-5]\d|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]\d|[01]?\d\d?)$/;
+        var urlTest = /^[a-zA-Z]+:\/\/[^\s]*$/;
+        var numTest = /^[+-]?[1-9]\d*|0$/;
+        var numTest1 = /^[+-]?[1-9]\d*\.\d*|[+-]?0\.\d*$/;
+        var splitThree = /(?<=^(\d{3})+)(\d)/g;
+        var lastSplitThree = /(\d)(?=(\d{3})+$)/g;
+        console.log(str.replace(lastSplitThree, '$&,'));
+        console.log(str.replace(splitThree,',$&'));
+        // if(pattern.exec(str)){
+        //     alert("correct");
+        // }else{
+        //     alert("wrong");
+        // }
+        // console.log(pattern.exec(str));
+        // console.log(numTest.test(str));
+        // console.log(numTest1.test(str));
+        // console.log(urlTest.test(str));
+        // console.log(str.match(paramMatch));
+        // console.log(result);
     }
 
 </script>

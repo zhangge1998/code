@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var input = 'hello world';
+    // var arr = input.split('');
+    // var result = arr.map(function(item){
+    //     return item.charCodeAt();
+    // });
+    var arr = [];
+    for(var i = 0; i < input.length; i++){
+        arr.push(input.charCodeAt(i));
+    }
+    var result = arr.sort();
+    console.log(result);
+</script>
+</body>
+</html>

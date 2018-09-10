@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{height:2000px;}
+    </style>
+</head>
+<body>
+<!--函数节流的要点是设置一个变量当标志位，记录当前代码是否在执行-->
+<!--如果空闲，则可以正常触发方法执行。-->
+<!--如果代码正在执行，则取消这次方法执行，直接return。-->
+<script>
+    var flag = true;
+    var obj = document.body;
+    obj.onscroll = function(){
+        if(!flag){
+            return;
+        }
+        flag = false;
+        setTimeout(function(){
+            // console.log(document.documentElement.scrollTop);
+            console.log('函数节流');
+            flag = true;
+        }, 300)
+    }
+</script>
+</body>
+</html>

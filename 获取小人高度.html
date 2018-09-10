@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        #man{width:50px;height:300px;background: #ccc141;position:relative;}
+        #line{width:60px;height:5px;background: #cccccc;position:absolute;top:140px;left:-5px;}
+    </style>
+</head>
+<body>
+<div id="man">
+    <div id="line"></div>
+</div>
+<script>
+    var oLine = document.getElementById('line');
+    var oMan = document.getElementById('man');
+    oLine.onmousedown = function(event){
+        console.log(oLine.offsetTop);
+        var disY = event.clientY - oLine.offsetTop;
+        document.onmousemove = function(event){
+            var top = event.clientY - disY;
+            if(top >= 10 && top < oMan.offsetHeight - 10){
+                oLine.style.top = top + 'px';
+            }
+        };
+        document.onmouseup = function(){
+            console.log(oLine.offsetTop);
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+    }
+</script>
+</body>
+</html>

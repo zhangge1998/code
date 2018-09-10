@@ -35,7 +35,13 @@
             document.documentElement.scrollTop = document.body.scrollTop = top + moveHeight;
         }, 60);
 
-    }
+    };
+    window.onscroll = function(){
+        console.log('hahha');
+    };
+    window.onresize = function(){
+        console.log('zzzz');
+    };
 </script>
 </body>
 </html>
