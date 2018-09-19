@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // var input = 'ab  ab'.split(/\s+/);
+    // console.log(input);
+    // var a = input[0];
+    // var b = input[1];
+    // var c = a.split('').sort();
+    // var d = b.split('').sort();
+    // var len = Array.from(new Set(c)).length;
+    // console.log(len);
+    // if(len === 1 && a === b){
+    //     console.log(1);
+    // }else if(a !== b && c.join('') === d.join('')){
+    //     console.log(1);
+    // }else{
+    //     console.log(0);
+    // }
+    var input = '1.0.1  1'.split(/\s+/);
+    var a = input[0].split('.');
+    var b = input[1].split('.');
+    var minLen = Math.min(a.length, b.length);
+    var position = 0;
+    var diff = 0;
+    while(position < minLen){
+        diff = parseInt(a[position]) - parseInt(b[position]);
+        if(diff !== 0){
+            break;
+        }
+        position++;
+
+    }
+    if(diff !== 0 ){
+        diff = diff;
+    }else{
+        diff = a.length - b.length;
+    }
+    if(diff > 0){
+        console.log(1);
+    }else{
+        console.log(0);
+    }
+</script>
+</body>
+</html>

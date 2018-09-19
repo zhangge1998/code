@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    var arr = [4,5,1,6,2,7,3,8];
+    function fn(arr,k){
+        var nArr = arr.sort();
+        return nArr.slice(0, k);
+    }
+    console.log(fn(arr,4));
+</script>
 </body>
 </html>

@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    var arr = [1,2,3,2,2,2,5,4,2];
+    function fn(arr){
+        var nArr = arr.sort(function(a,b){return a - b;});
+        console.log(nArr);
+        for(var i = 0; i < nArr.length; i++){
+            var index = i + Math.floor(nArr.length/2);
+            if(nArr[i] === nArr[index]){
+                console.log(nArr[i]);
+            }
+        }
+    }
+    fn(arr);
+</script>
 </body>
 </html>

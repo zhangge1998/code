@@ -2,9 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    var obj = {
+        a:1,
+        b:[1,2,[1,2]],
+        c:{
+            d:1,
+            e:2
+        }
+    };
+    // var a =[]
+    function bianping(obj){
+        // for(var i in obj){
+        //     if(obj[i] instanceof Array){
+        //         bianping(obj[i]);
+        //     }else if(obj[i] instanceof Object){
+        //         bianping(obj[i]);
+        //     }else{
+        //         var str = i + '=' +obj[i];
+        //         a.push(str);
+        //     }
+        // }
+        // return a;
+        var result = {};
+        function recurse(cur, prop) {
+            if (Object(cur) !== cur) {
+                result[prop] = cur;
+            } else if (Array.isArray(cur)) {
+                for (var i = 0, l = cur.length; i < l; i++)
+                    recurse(cur[i], prop + "[" + i + "]");
+                if (l == 0)
+                    result[prop] = [];
+            } else {
+                var isEmpty = true;
+                for (var p in cur) {
+                    isEmpty = false;
+                    recurse(cur[p], prop ? prop + "." + p : p);
+                }
+                if (isEmpty && prop)
+                    result[prop] = {};
+            }
+        }
+        recurse(data, "");
+        return result;
+    }
+    console.log(bianping(obj));
+</script>
 </body>
 </html>

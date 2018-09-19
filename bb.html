@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function EventEmitter() {
+
+        this.on = function(name, fn){
+            this.addEventListener(name, fn, false);
+        };
+        this.emit = function(){
+
+        };
+        this.once = function(name, fn){
+            this.addEventListener(name, fn, false);
+            this.emit = null;
+        };
+        this.remove = function(name, fn){
+            this.removeEventListener(name, fn, false);
+        }
+
+    }
+    var e = new EventEmitter();
+    var count = 0;
+    e.on('test', function (num1, num2) {count = num1 + num2});
+    e.emit('test', 1, 2);
+    console.log(count);
+    // var students = [{"name":"张三","class":2,"score":64},
+    //     {"name":"李四","class":1,"score":80},{"name":"王五","class":1,"score":80},{"name":"赵六","class":4,"score":94}];
+    // function sortStudents(students) {
+    //     for(var i = 0; i < students.length - 1; i++){
+    //        for(var j = 0; j < students.length - 1 - i; j++){
+    //            if(students[j].class > students[j + 1].class){
+    //                var temp = students[j];
+    //                students[j] = students[j + 1];
+    //                students[j + 1] = temp;
+    //            }
+    //        }
+    //     }
+    //     for(var i = 0; i < students.length - 1; i++){
+    //         for(var j = 0; j < students.length - 1 - i; j++){
+    //             if(students[j].class === students[j+1].class && students[j].score > students[j+1].score){
+    //                 var temp = students[j];
+    //                 students[j] = students[j+1];
+    //                 students[j+1] = temp;
+    //             }
+    //         }
+    //     }
+    //     return JSON.stringify(students);
+    //
+    // }
+    // console.log(sortStudents(students));
+</script>
+</body>
+</html>

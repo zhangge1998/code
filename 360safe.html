@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var n = 5;
+    // var input = read_line().split(' ');
+    // var arr = input.map(function(item){
+    //     return parseInt(item);
+    // })
+    var arr = [9,7,8,3,5];
+    var count = 0;
+    for(var i = 0; i < n; i++){
+        // for(var j = i + 1; j < n; j++){
+        //     for(var k = j + 1; k < n; k++){
+                if(arr[i] > arr[i+1] && arr[i+1] > arr[i+2]){
+                    arr.splice(i,1);
+                    count++;
+                }else if(arr[i] < arr[i+1] && arr[i+1] < arr[i+2]){
+                    arr.splice((i+2),1);
+                    count++;
+                }
+        //     }
+        // }
+    }
+    // print(count);
+    console.log(count);
+</script>
+</body>
+</html>

@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    var arr = [2,1,4,5,3,6,3,2];
+    function sort(arr){
+        var len = arr.length;
+        for(var i = 1; i < len; i++){
+            var index = arr[i];
+            var j = i - 1;
+            while(arr[j] > index){
+                arr[j + 1] = arr[j];
+                j--;
+            }
+            arr[j + 1] = index;
+        }
+        return arr;
+    }
+    console.log(sort(arr));
+</script>
 </body>
 </html>

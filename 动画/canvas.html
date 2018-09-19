@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<canvas id="myCanvas" width="200" height="300" style="border:1px solid #ccc;"></canvas>
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var cxt = canvas.getContext('2d');
+    // cxt.lineWidth = '1px';
+    // cxt.moveTo(50, 50);
+    // cxt.lineTo(100,100);
+    // cxt.stroke();
+    cxt.fillStyle = 'red';
+    cxt.fillRect(10,10,100,100);
+    // cxt.beginPath();
+    // cxt.lineWidth = '1px';
+    // cxt.arc(50,50,30,0,2*Math.PI);
+    // cxt.stroke();
+    // cxt.fill();
+    canvas.onclick = function(){
+        alert('circle');
+    }
+</script>
 </body>
 </html>

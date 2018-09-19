@@ -5,7 +5,7 @@
     <title>Title</title>
     <style>
         .content{display: flex;width:100%;}
-        .left{width:200px;height:100px;background: #5c59cc;order:1;}
+        .left{width:200px;height:100px;margin-left:10px;background: #5c59cc;order:1;}
         .right{flex:1;height:100px;background: lightcoral;order:-1;}
     </style>
 </head>
@@ -18,5 +18,78 @@
         <p>右边</p>
     </div>
 </div>
+<script>
+    // function compare(str, str1) {
+    //     var aa = str.split('');
+    //     var bb = str1.split('');
+    //     var a = [];
+    //     var b = [];
+    //     for(var i = 0; i < aa.length; i++){
+    //         if(a.indexOf(aa[i]) == -1){
+    //             a.push(aa[i]);
+    //         }
+    //     }
+    //     for(var i = 0; i < bb.length; i++){
+    //         if(b.indexOf(bb[i]) == -1){
+    //             b.push(bb[i]);
+    //         }
+    //     }
+    //     var same = [];
+    //     var res = [];
+    //     for(var i = 0; i < a.length; i++){
+    //         if(b.indexOf(a[i]) >= 0){
+    //             same.push(a[i]);
+    //         }
+    //     }
+    //     for(var i = 0; i < a.length; i++){
+    //         if(same.indexOf(a[i]) == -1){
+    //             res.push(a[i]);
+    //         }
+    //     }
+    //     for(var i = 0; i < b.length; i++){
+    //         if(same.indexOf(b[i]) == -1){
+    //             res.push(b[i]);
+    //         }
+    //     }
+    //     res.sort();
+    //     return res.join('') + res.reverse().join('');
+        // for(var i = 0; i < a.length; i++){
+        //     for(var j = 0; j < b.length; j++){
+        //         if(a[i] === b[j]){
+        //             a.splice(i, 1);
+        //             b.splice(j, 1);
+        //             i--;
+        //             j--;
+        //         }
+        //     }
+        // }
+        // var s = a.concat(b).sort().join('');
+        // var c = s.split('').reverse().join('');
+        // var result = s+c;
+        // return result;
+    // }
+    // console.log(compare("asdf","wqerd"));
+    // function compare(t1, t2) {
+        // var time1 = new Date(t1);
+        // var time2 = new Date(t2);
+        // console.log(time1,time2);
+        // if(time1 == 'Invalid Date' || time2 == 'Invalid Date')
+        // {
+        //     return 0;
+        // }else{
+        //     var n = Math.abs(time1 - time2);
+        //     var hours = Math.floor(n/1000/60/60);
+        //     var minutes= Math.floor((n - hours*1000*60*60)/60/1000);
+        //     if( minutes < 29){
+        //         hours += 0;
+        //     }else{
+        //         hours += 0.5;
+        //     }
+        //     return hours;
+        // }
+
+    // }
+    // console.log(compare("2018-06-23 11:10","2018-06-22 15:30"));
+</script>
 </body>
 </html>

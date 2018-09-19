@@ -2,9 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    var obj = {
+        a:1,
+        b:{
+            h:2,
+            g:3,
+        },
+        c:[1,2,3,4]
+    };
+    function clone(obj){
+        var newObj;
+        if(obj instanceof Array){
+            nArr = [];
+            var i = obj.length;
+            while(i--){
+                nArr[i] = clone(obj[i]);
+            }
+            return nArr;
+        }else if(obj instanceof Object){
+            newObj = {};
+            for(var k in obj){
+                newObj[k] = clone(obj[k]);
+            }
+            return newObj;
+        }else{
+            return obj;
+        }
+    }
+    var r = clone(obj);
+    r.b.h = 5;
+    r.c[2] = 5;
+    obj.b.h = 3;
+    console.log(obj, r);
+</script>
 </body>
 </html>

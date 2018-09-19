@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*两列布局*/
+        /*.content{width:100%;border:1px solid #ccc;position: relative;}*/
+        /*.left{width:200px;height:200px;background: #5c59cc;position: absolute;}*/
+        /*.right{height:200px;background:#ccc141;position: absolute;left: 200px;right:0;margin-left: 10px;}*/
+        /*.left{float:left;width:200px;height:200px;background: #5c59cc;}*/
+        /*.right{overflow:hidden;height:200px;background: #ccc141;}*/
+        /*.content{display: flex;flex-direction: row;}*/
+        /*.left{order: -1;width:200px;height:100px;background: #5c59cc;}*/
+        /*.right{flex:1;height:200px;background: #ccc141;}*/
+        /*三列布局*/
+        /*.content{width:100%;}*/
+        /*.left{float:left;width:200px;height:200px;background: #5c59cc;}*/
+        /*.right{float:right;width:200px;height:200px;background: #ccc141;}*/
+        /*!*.center{margin-left: 200px;margin-right: 200px;height:200px;background: #cccccc;}*!*/
+        /*.content{width:100%;}*/
+        /*.left{float:left;width:200px;height:200px;background: #ccc141;}*/
+        /*.right{float:right;width:200px;height:200px;background: #cccccc;}*/
+        /*.center{overflow: hidden;height:200px;background: #5c59cc;}*/
+        /*.content{display: flex;flex-direction: row;}*/
+        /*.left{width:200px;height:200px;background: #5c59cc;order:-1;}*/
+        /*.right{width:200px;height:200px;background: #ccc141;order:1;}*/
+        /*.center{flex:1;height:200px;background: #cccccc;}*/
+        /*.content{margin-left: 200px;margin-right: 200px;}*/
+        /*.center{width:100%;height:200px;float:left;background: #ccc141;}*/
+        /*.left{width:200px;height:200px;float:left;background: #cccccc;margin-left: -100%;position:relative;left:-200px;}*/
+        /*.right{width: 200px;height:200px;float:left;background: #5c59cc;margin-left:-200px;position:relative;left:200px;}*/
+        /*高度自适应*/
+        /*.wrap{position:relative;}*/
+        /*.left{width:200px;height:100%;position:absolute;background: #ccc141;}*/
+        /*.right{width:400px;background: #5c59cc;margin-left: 200px;}*/
+        .wrap{display: flex;flex-direction: row;align-items: stretch;}
+        .left{width:200px;background: #5c59cc;order:-1;}
+        .right{width:400px;background: #ccc141;}
+    </style>
+</head>
+<body>
+<!--两列布局-->
+<!--<div class="content">-->
+    <!--<div class="left"></div>-->
+    <!--<div class="right"></div>-->
+<!--</div>-->
+<!--三列布局-->
+<!--<div class="content">-->
+    <!--<div class="center"></div>-->
+    <!--<div class="left"></div>-->
+    <!--<div class="right"></div>-->
+<!--</div>-->
+<!--高度自适应-->
+<div class="wrap">
+    <div class="left"></div>
+    <div class="right">
+        <div>ppp</div>
+        <div>ppp</div>
+        <div>ppp</div>
+    </div>
+</div>
+</body>
+</html>

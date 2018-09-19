@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    function fn(n){
+        var str = '';
+        for(var i = 1; i <= n; i++){
+            str += i;
+        }
+        var arr = str.split('').sort();
+        var a = arr.indexOf('1');
+        var b = arr.lastIndexOf('1');
+        console.log(a,b);
+        return (b - a + 1);
+    }
+    console.log(fn(20));
+</script>
 </body>
 </html>

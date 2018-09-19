@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    function fibonaqi(n){
+        if(n == 0){
+            return 0;
+        }else if(n <= 2){
+            return n;
+        }else if(n == 3){
+            return 4;
+        }else{
+            return fibonaqi(n-1) + fibonaqi(n-2) + fibonaqi(n - 3);
+        }
+    }
+    console.log(fibonaqi(10));
+</script>
 </body>
 </html>

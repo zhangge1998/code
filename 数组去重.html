@@ -2,9 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    var a = [1, 2, 3, 1, 2, 5];
+    var ar = [{a: 1}, {b: 1}, {a: 1, b: 1}, {b: 1, a: 1},{a:1}];
+    var arr = [[1, 2, 3, 4], [1, 2], [1, 3, 2, 4], [2, 1]];
+    // var result = new Set(arr);//适合简单去重
+    // console.log(Array.from(result));
+    var result = [];
+    // for(var i = 0; i < arr.length; i++){
+    //     if(result.indexOf(arr[i]) === -1){
+    //         result.push(arr[i]);
+    //     }
+    // }
+    // var obj = {};
+    // for(var i = 0; i < arr.length; i++){
+    //     if(!obj[arr[i]]){
+    //         obj[arr[i]] = true;
+    //         result.push(arr[i]);
+    //     }
+    // }
+    // var obj = {};
+    // for(var i = 0; i < arr.length; i++){
+    //     var str = JSON.stringify(arr[i]).split("").sort().join("");
+    //     console.log(str);
+    //     if(!obj[str]){
+    //         obj[str] = true;
+    //         result.push(arr[i]);
+    //     }
+    // }
+    // console.log(result);
+    var arr = [1,[1,2,[1]],[4]];
+    function extract(arr){
+        // for(var i = 0; i < arr.length; i++){
+        //     if(arr[i] instanceof Array === true){
+        //         extract(arr[i]);
+        //     }else{
+        //         console.log(arr[i]);}
+        // }
+        // for(var i = 0; i < arr.length; i++){
+        //     if(arr[i] instanceof Array === true){
+        //         console.log(...arr[i]);
+        //     }else{
+        //         console.log(arr[i]);
+        //     }
+        // }
+        console.log(arr.toString().split(','));
+    }
+    extract(arr);
+</script>
 </body>
 </html>

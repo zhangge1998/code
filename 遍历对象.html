@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    var obj = {
+        a:1,
+        b:{
+            c:2,
+            d:3
+        },
+        e:{
+            f:[1,2,3,4]
+        }
+    };
+
+    function bianli(obj){
+        for(var i in obj){
+            if(obj[i] instanceof Array){
+                console.log(i + '=' + obj[i]);
+            }else if(obj[i] instanceof Object){
+                bianli(obj[i]);
+
+            }else{
+                console.log(i + '=' + obj[i]);
+            }
+        }
+    }
+
+    bianli(obj);
+</script>
 </body>
 </html>

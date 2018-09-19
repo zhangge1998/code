@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    var arr = [2,1,4,5,3,6,3,2];
+    function chooseSort(arr){
+        var len = arr.length;
+        for(var i = 0; i < len - 1; i++){
+            for(var j = i + 1; j < len; j++){
+                if(arr[i] > arr[j]){
+                    var temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        return arr;
+    }
+    console.log(chooseSort(arr));
+</script>
 </body>
 </html>

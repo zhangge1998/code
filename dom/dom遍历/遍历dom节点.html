@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<p>hahahh</p>
+<p>hahahh</p>
+<p>hahahh</p>
+<div>hhh</div>
+<div>hhh</div>
+<div>hhh</div>
+<span>hhh</span>
+<p>lilili</p>
+<div>hahahh</div>
+<script>
+    var obj = document.body;
+    var filter = function(node){
+        return node.innerText === 'hahahh' ?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_SKIP;
+    };
+    var iterator = document.createNodeIterator(obj, NodeFilter.SHOW_ELEMENT,filter,false);
+
+    var node = iterator.nextNode();
+    while(node !== null){
+        node.innerText = '嘿嘿嘿';
+        node = iterator.nextNode();
+    }
+</script>
 </body>
 </html>
